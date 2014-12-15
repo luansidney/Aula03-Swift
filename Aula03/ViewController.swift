@@ -10,16 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblResultado: UILabel!
+    @IBOutlet weak var txtNome: UITextField!
+    @IBOutlet weak var txtSaudacao: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
+    @IBAction func ClickBotao(sender: UIButton) {
+        
+        lblResultado.text = txtSaudacao.text + " " +  txtNome.text
+        lblResultado.hidden = false
+        txtSaudacao.resignFirstResponder()
+        
+    }
 
 }
 
