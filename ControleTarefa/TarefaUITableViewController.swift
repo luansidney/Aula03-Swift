@@ -8,7 +8,7 @@
 
 import UIKit
 
-var listaTarefas = ["Responder Emais", "Homologar"]
+var listaTarefas = ["Responder Emails", "Homologar"]
 
 class TarefaUITableViewController: UITableViewController {
   
@@ -49,12 +49,24 @@ class TarefaUITableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
        
         if segue.identifier == "detalheTarefa" {
-        //Antes de enviar para o proximo view
+          //Antes de enviar para o proximo view
           let detalhe = segue.destinationViewController as DetalheTarefaViewController
-            //detalhe.detalheTarefa = self.tableView.
+          detalhe.detalheTarefa = listaTarefas[self.tableView.indexPathForSelectedRow()!.row]
         }
     }
 
+    
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {            
+            listaTarefas.removeAtIndex(indexPath.row)
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
+    
+    
+    
+    
     
    /* // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {

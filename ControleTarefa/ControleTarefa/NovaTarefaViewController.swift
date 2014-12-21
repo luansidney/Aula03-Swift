@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NovaTarefaViewController: UIViewController {
+class NovaTarefaViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var txtDescTarefa: UITextField!
     
@@ -34,7 +34,15 @@ class NovaTarefaViewController: UIViewController {
     }
     
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.confirmarAdicao(UIButton())
+        println("Ok")
+        return true
+    }
     
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.txtDescTarefa.resignFirstResponder()
+    }
     
     
     
