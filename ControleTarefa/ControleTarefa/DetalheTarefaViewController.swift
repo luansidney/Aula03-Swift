@@ -10,12 +10,14 @@ import UIKit
 
 class DetalheTarefaViewController: UIViewController {
     var detalheTarefa = ""
+    var prioridade = ""
     
+    @IBOutlet weak var lblPrioridade: UILabel!
     @IBOutlet weak var lblDetalheTarefa: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         lblDetalheTarefa.text = detalheTarefa
-        // Do any additional setup after loading the view.
+        lblPrioridade.text = prioridade
     }
 
     override func didReceiveMemoryWarning() {

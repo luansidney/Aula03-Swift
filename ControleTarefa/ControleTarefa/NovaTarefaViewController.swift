@@ -10,6 +10,7 @@ import UIKit
 
 class NovaTarefaViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var tpPrioridade: UISegmentedControl!
     @IBOutlet weak var txtDescTarefa: UITextField!
     
     override func viewDidLoad() {
@@ -25,8 +26,17 @@ class NovaTarefaViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func confirmarAdicao(sender: UIButton) {
-        listaTarefas.append(self.txtDescTarefa.text)
+        switch tpPrioridade.selectedSegmentIndex{
+        case 0:
+            listaTarefa0.append(self.txtDescTarefa.text)
+        case 1:
+            listaTarefa1.append(self.txtDescTarefa.text)
+        default:
+            listaTarefa2.append(self.txtDescTarefa.text)
+            
+        }
         txtDescTarefa.text = nil
+        tpPrioridade.selectedSegmentIndex = 1
         txtDescTarefa.resignFirstResponder()
         self.dismissViewControllerAnimated(true, completion: { () -> Void in
             
