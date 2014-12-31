@@ -107,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FD004021A546E7A002A4B87 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */,
+				17CA0B061A67138400B4A67D /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		17CA0AF61A67138300B4A67D = {
 			isa = PBXGroup;
 			children = (
@@ -128,10 +137,9 @@
 		17CA0B011A67138400B4A67D /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				0FD004021A546E7A002A4B87 /* ViewController */,
 				17CA0B041A67138400B4A67D /* AppDelegate.swift */,
-				17CA0B061A67138400B4A67D /* ViewController.swift */,
 				17CA0B081A67138400B4A67D /* Main.storyboard */,
-				17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */,
 				17CA0B0B1A67138400B4A67D /* Images.xcassets */,
 				17CA0B0D1A67138400B4A67D /* LaunchScreen.xib */,
 				17CA0B021A67138400B4A67D /* Supporting Files */,
@@ -501,6 +509,7 @@
 				17CA0B201A67138400B4A67D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17CA0B211A67138400B4A67D /* Build configuration list for PBXNativeTarget "InstagramTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +518,7 @@
 				17CA0B231A67138400B4A67D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

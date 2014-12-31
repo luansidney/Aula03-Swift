@@ -58,7 +58,7 @@ class ListaUsuarioTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("celulaUsuario", forIndexPath: indexPath) as UITableViewCell
 
         cell.textLabel?.text = self.todosUsuarios[indexPath.row].username
-
+        marcarSeSegueOuNao(indexPath.row, linhaSelecionada: cell)
         return cell
     }
     
@@ -68,37 +68,66 @@ class ListaUsuarioTableViewController: UITableViewController {
         
         if linhaSelecionada.accessoryType == UITableViewCellAccessoryType.Checkmark{
             
-            linhaSelecionada.accessoryType == UITableViewCellAccessoryType.None
+            let query = PFQuery(className: "Timeline")!
             
-            
-            let query = PFQuery(className: "Timeline")
-            query.whereKeyExists("usuarioDestino.username = " + (self.todosUsuarios[indexPath.row] as PFUser).username)
-            
+            query.whereKey("usuarioDestino", equalTo: self.todosUsuarios[indexPath.row] as PFUser)
+            query.whereKey("usuarioOrigem", equalTo: PFUser.currentUser() as PFUser)
             query.findObjectsInBackgroundWithBlock { (usuarios:[AnyObject]!, erro: NSError!) -> Void in
                 
                 for usu in usuarios{
                     usu.deleteInBackgroundWithBlock({ (Bool, NSError) -> Void in
                         println("Excluiu")
+                        self.marcarSeSegueOuNao(indexPath.row, linhaSelecionada: linhaSelecionada)
                     })
                 }
             }
-
-            
             
         }else{
-            linhaSelecionada.accessoryType = UITableViewCellAccessoryType.Checkmark
-            
            
             timeline["usuarioOrigem"] = PFUser.currentUser() as PFUser
             timeline["usuarioDestino"] = self.todosUsuarios[indexPath.row] as PFUser
+            timeline["Tipo"] = 1//1 = seguir
             println(self.todosUsuarios[indexPath.row])
-            println(PFUser.currentUser() as PFUser)
             timeline.saveInBackgroundWithBlock({ (Bool, NSError) -> Void in
-                println("foi")
+                println("Incluiu")
+                self.marcarSeSegueOuNao(indexPath.row, linhaSelecionada: linhaSelecionada)
             })
             
         }
     }
+    
+    
+    
+    
+    func marcarSeSegueOuNao(row: Int, linhaSelecionada: UITableViewCell){
+        
+        let usuLogado = PFUser.currentUser()!
+        
+        let query = PFQuery(className: "Timeline")!
+        
+        query.whereKey("usuarioDestino", equalTo: self.todosUsuarios[row] as PFUser)
+        query.whereKey("usuarioOrigem", equalTo: PFUser.currentUser() as PFUser)
+        query.whereKey("Tipo", equalTo: 1)
+        query.findObjectsInBackgroundWithBlock { (usuarios:[AnyObject]!, erro: NSError!) -> Void in
+    
+            if usuarios.count > 0{
+                 linhaSelecionada.accessoryType = UITableViewCellAccessoryType.Checkmark
+            }else{
+                linhaSelecionada.accessoryType = UITableViewCellAccessoryType.None
+            }
+            
+        }
+
+    }
+    
+    @IBAction func atualizarTabela(sender: UIBarButtonItem) {
+        tableView.reloadData()
+    }
+    
+    
+    
+    
+    
     
     /*
     // Override to support conditional editing of the table view.
