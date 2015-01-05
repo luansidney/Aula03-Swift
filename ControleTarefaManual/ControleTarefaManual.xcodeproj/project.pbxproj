@@ -1,0 +1,446 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		170BADD61A5B3AB900729A03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADD51A5B3AB900729A03 /* AppDelegate.swift */; };
+		170BADDB1A5B3AB900729A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 170BADD91A5B3AB900729A03 /* Main.storyboard */; };
+		170BADDD1A5B3AB900729A03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170BADDC1A5B3AB900729A03 /* Images.xcassets */; };
+		170BADE01A5B3AB900729A03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170BADDE1A5B3AB900729A03 /* LaunchScreen.xib */; };
+		170BADEC1A5B3AB900729A03 /* ControleTarefaManualTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADEB1A5B3AB900729A03 /* ControleTarefaManualTests.swift */; };
+		170BADF61A5B3BBE00729A03 /* ListaTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADF51A5B3BBE00729A03 /* ListaTarefaViewController.swift */; };
+		170BADF81A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADF71A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift */; };
+		170BADFC1A5B499900729A03 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADFB1A5B499900729A03 /* Tarefa.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		170BADE61A5B3AB900729A03 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 170BADC81A5B3AB900729A03 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 170BADCF1A5B3AB900729A03;
+			remoteInfo = ControleTarefaManual;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		170BADD01A5B3AB900729A03 /* ControleTarefaManual.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ControleTarefaManual.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		170BADD41A5B3AB900729A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		170BADD51A5B3AB900729A03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		170BADDA1A5B3AB900729A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		170BADDC1A5B3AB900729A03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		170BADDF1A5B3AB900729A03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		170BADE51A5B3AB900729A03 /* ControleTarefaManualTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ControleTarefaManualTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		170BADEA1A5B3AB900729A03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		170BADEB1A5B3AB900729A03 /* ControleTarefaManualTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControleTarefaManualTests.swift; sourceTree = "<group>"; };
+		170BADF51A5B3BBE00729A03 /* ListaTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTarefaViewController.swift; sourceTree = "<group>"; };
+		170BADF71A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinhaCelulaTableViewCell.swift; sourceTree = "<group>"; };
+		170BADFB1A5B499900729A03 /* Tarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		170BADCD1A5B3AB900729A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		170BADE21A5B3AB900729A03 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		170BADC71A5B3AB900729A03 = {
+			isa = PBXGroup;
+			children = (
+				170BADD21A5B3AB900729A03 /* ControleTarefaManual */,
+				170BADE81A5B3AB900729A03 /* ControleTarefaManualTests */,
+				170BADD11A5B3AB900729A03 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		170BADD11A5B3AB900729A03 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				170BADD01A5B3AB900729A03 /* ControleTarefaManual.app */,
+				170BADE51A5B3AB900729A03 /* ControleTarefaManualTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		170BADD21A5B3AB900729A03 /* ControleTarefaManual */ = {
+			isa = PBXGroup;
+			children = (
+				170BADFA1A5B497E00729A03 /* Modelos */,
+				170BADF91A5B496C00729A03 /* ViewController */,
+				170BADD91A5B3AB900729A03 /* Main.storyboard */,
+				170BADDC1A5B3AB900729A03 /* Images.xcassets */,
+				170BADD31A5B3AB900729A03 /* Supporting Files */,
+			);
+			path = ControleTarefaManual;
+			sourceTree = "<group>";
+		};
+		170BADD31A5B3AB900729A03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				170BADD51A5B3AB900729A03 /* AppDelegate.swift */,
+				170BADDE1A5B3AB900729A03 /* LaunchScreen.xib */,
+				170BADD41A5B3AB900729A03 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		170BADE81A5B3AB900729A03 /* ControleTarefaManualTests */ = {
+			isa = PBXGroup;
+			children = (
+				170BADEB1A5B3AB900729A03 /* ControleTarefaManualTests.swift */,
+				170BADE91A5B3AB900729A03 /* Supporting Files */,
+			);
+			path = ControleTarefaManualTests;
+			sourceTree = "<group>";
+		};
+		170BADE91A5B3AB900729A03 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				170BADEA1A5B3AB900729A03 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		170BADF91A5B496C00729A03 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				170BADF51A5B3BBE00729A03 /* ListaTarefaViewController.swift */,
+				170BADF71A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		170BADFA1A5B497E00729A03 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				170BADFB1A5B499900729A03 /* Tarefa.swift */,
+			);
+			name = Modelos;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		170BADCF1A5B3AB900729A03 /* ControleTarefaManual */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 170BADEF1A5B3AB900729A03 /* Build configuration list for PBXNativeTarget "ControleTarefaManual" */;
+			buildPhases = (
+				170BADCC1A5B3AB900729A03 /* Sources */,
+				170BADCD1A5B3AB900729A03 /* Frameworks */,
+				170BADCE1A5B3AB900729A03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ControleTarefaManual;
+			productName = ControleTarefaManual;
+			productReference = 170BADD01A5B3AB900729A03 /* ControleTarefaManual.app */;
+			productType = "com.apple.product-type.application";
+		};
+		170BADE41A5B3AB900729A03 /* ControleTarefaManualTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 170BADF21A5B3AB900729A03 /* Build configuration list for PBXNativeTarget "ControleTarefaManualTests" */;
+			buildPhases = (
+				170BADE11A5B3AB900729A03 /* Sources */,
+				170BADE21A5B3AB900729A03 /* Frameworks */,
+				170BADE31A5B3AB900729A03 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				170BADE71A5B3AB900729A03 /* PBXTargetDependency */,
+			);
+			name = ControleTarefaManualTests;
+			productName = ControleTarefaManualTests;
+			productReference = 170BADE51A5B3AB900729A03 /* ControleTarefaManualTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		170BADC81A5B3AB900729A03 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = DeviOS;
+				TargetAttributes = {
+					170BADCF1A5B3AB900729A03 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					170BADE41A5B3AB900729A03 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 170BADCF1A5B3AB900729A03;
+					};
+				};
+			};
+			buildConfigurationList = 170BADCB1A5B3AB900729A03 /* Build configuration list for PBXProject "ControleTarefaManual" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 170BADC71A5B3AB900729A03;
+			productRefGroup = 170BADD11A5B3AB900729A03 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				170BADCF1A5B3AB900729A03 /* ControleTarefaManual */,
+				170BADE41A5B3AB900729A03 /* ControleTarefaManualTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		170BADCE1A5B3AB900729A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				170BADDB1A5B3AB900729A03 /* Main.storyboard in Resources */,
+				170BADE01A5B3AB900729A03 /* LaunchScreen.xib in Resources */,
+				170BADDD1A5B3AB900729A03 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		170BADE31A5B3AB900729A03 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		170BADCC1A5B3AB900729A03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				170BADD61A5B3AB900729A03 /* AppDelegate.swift in Sources */,
+				170BADF61A5B3BBE00729A03 /* ListaTarefaViewController.swift in Sources */,
+				170BADFC1A5B499900729A03 /* Tarefa.swift in Sources */,
+				170BADF81A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		170BADE11A5B3AB900729A03 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				170BADEC1A5B3AB900729A03 /* ControleTarefaManualTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		170BADE71A5B3AB900729A03 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 170BADCF1A5B3AB900729A03 /* ControleTarefaManual */;
+			targetProxy = 170BADE61A5B3AB900729A03 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		170BADD91A5B3AB900729A03 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				170BADDA1A5B3AB900729A03 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		170BADDE1A5B3AB900729A03 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				170BADDF1A5B3AB900729A03 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		170BADED1A5B3AB900729A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		170BADEE1A5B3AB900729A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		170BADF01A5B3AB900729A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ControleTarefaManual/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		170BADF11A5B3AB900729A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ControleTarefaManual/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		170BADF31A5B3AB900729A03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ControleTarefaManualTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ControleTarefaManual.app/ControleTarefaManual";
+			};
+			name = Debug;
+		};
+		170BADF41A5B3AB900729A03 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ControleTarefaManualTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ControleTarefaManual.app/ControleTarefaManual";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		170BADCB1A5B3AB900729A03 /* Build configuration list for PBXProject "ControleTarefaManual" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				170BADED1A5B3AB900729A03 /* Debug */,
+				170BADEE1A5B3AB900729A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		170BADEF1A5B3AB900729A03 /* Build configuration list for PBXNativeTarget "ControleTarefaManual" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				170BADF01A5B3AB900729A03 /* Debug */,
+				170BADF11A5B3AB900729A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		170BADF21A5B3AB900729A03 /* Build configuration list for PBXNativeTarget "ControleTarefaManualTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				170BADF31A5B3AB900729A03 /* Debug */,
+				170BADF41A5B3AB900729A03 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 170BADC81A5B3AB900729A03 /* Project object */;
+}
