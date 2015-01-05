@@ -55,7 +55,7 @@
                                                 <constraint firstItem="dew-9G-zKH" firstAttribute="top" secondItem="N0R-MB-Ufj" secondAttribute="topMargin" constant="5" id="d5z-jv-w15"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.52720229529999996" green="1" blue="0.3591801302" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.17646451029999999" green="0.24668459200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="lblData" destination="UeO-hq-ses" id="q16-RC-mEq"/>
                                             <outlet property="lblDescricao" destination="HoD-o1-SBp" id="WNI-49-GU9"/>
@@ -77,11 +77,66 @@
                             <constraint firstAttribute="trailing" secondItem="Cf6-VQ-8Co" secondAttribute="trailing" id="snF-8s-cA8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="LISTA TAREFA" id="RT2-KK-xAu"/>
+                    <navigationItem key="navigationItem" title="LISTA TAREFA" id="RT2-KK-xAu">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3OE-rk-bts">
+                            <color key="tintColor" red="0.17646451028056354" green="0.24668459202591375" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="JH1-aw-7un" kind="presentation" id="52k-Mt-75y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFh-lz-f1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="307" y="408"/>
+            <point key="canvasLocation" x="-89" y="406"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LxT-Mg-H2S">
+            <objects>
+                <viewController id="rdk-op-D5Y" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Lb-BK-6uc"/>
+                        <viewControllerLayoutGuide type="bottom" id="oW3-WV-Fqo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dvz-32-pQC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
+                                <rect key="frame" x="26" y="40" width="553" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descricao Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVw-Ca-OzV">
+                                <rect key="frame" x="26" y="80" width="553" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-hx-FwE">
+                                <rect key="frame" x="16" y="143" width="568" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="442193276.792696">
+                                    <!--2015-01-05 23:27:56 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qVw-Ca-OzV" secondAttribute="trailing" constant="5" id="2ug-nR-goy"/>
+                            <constraint firstItem="U6b-hx-FwE" firstAttribute="top" secondItem="qVw-Ca-OzV" secondAttribute="bottom" constant="33" id="EfV-Sx-eCe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DGU-hl-K5T" secondAttribute="trailing" constant="5" id="GmV-5A-fgt"/>
+                            <constraint firstItem="U6b-hx-FwE" firstAttribute="trailing" secondItem="Dvz-32-pQC" secondAttribute="trailingMargin" id="LFh-cc-hPY"/>
+                            <constraint firstItem="qVw-Ca-OzV" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" constant="10" id="W3d-fH-I8b"/>
+                            <constraint firstItem="DGU-hl-K5T" firstAttribute="top" secondItem="0Lb-BK-6uc" secondAttribute="bottom" constant="20" id="mpH-Zs-3FH"/>
+                            <constraint firstItem="DGU-hl-K5T" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" constant="10" id="rMG-EW-8yx"/>
+                            <constraint firstItem="U6b-hx-FwE" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" id="sHu-i2-Ztt"/>
+                            <constraint firstItem="qVw-Ca-OzV" firstAttribute="top" secondItem="DGU-hl-K5T" secondAttribute="bottom" constant="10" id="sKL-en-RGa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xkt-eU-MKx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZgC-sz-Vf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1555" y="406"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Boq-XM-vYa">
@@ -97,7 +152,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqk-Wa-iXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-392" y="432"/>
+            <point key="canvasLocation" x="-788" y="430"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fLO-d4-3o4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JH1-aw-7un" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BZb-wB-FzU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rdk-op-D5Y" kind="relationship" relationship="rootViewController" id="VBN-zR-K74"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aiu-Ws-sFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="743" y="406"/>
         </scene>
     </scenes>
 </document>
