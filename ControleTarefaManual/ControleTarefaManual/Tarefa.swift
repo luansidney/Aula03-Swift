@@ -6,10 +6,16 @@
 //  Copyright (c) 2015 DeviOS. All rights reserved.
 //
 
-import Foundation
-struct Tarefa {
-    var titulo: String
-    var descricao: String
-    var data: String
+import Realm
+
+class Tarefa: RLMObject {
+    dynamic var titulo = ""
+    dynamic var descricao = ""
+    dynamic var data = NSDate()
+    dynamic var categoria = Categoria()
+    
+    override class func primaryKey() -> String{
+        return "titulo"
+    }
     
 }

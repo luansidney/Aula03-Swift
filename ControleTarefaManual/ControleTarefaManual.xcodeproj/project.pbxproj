@@ -15,6 +15,11 @@
 		170BADF61A5B3BBE00729A03 /* ListaTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADF51A5B3BBE00729A03 /* ListaTarefaViewController.swift */; };
 		170BADF81A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADF71A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift */; };
 		170BADFC1A5B499900729A03 /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADFB1A5B499900729A03 /* Tarefa.swift */; };
+		170BADFE1A5DCE8600729A03 /* AdicionarTarefaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BADFD1A5DCE8600729A03 /* AdicionarTarefaViewController.swift */; };
+		170BAE011A5DD43100729A03 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170BAE001A5DD43100729A03 /* Realm.framework */; };
+		170BAE031A5DD44800729A03 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170BAE021A5DD44800729A03 /* RLMSupport.swift */; };
+		17CA0AF31A5DD4E800B4A67D /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0AF21A5DD4E800B4A67D /* libc++.dylib */; };
+		17CA0AF51A5DFB6E00B4A67D /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0AF41A5DFB6E00B4A67D /* Categoria.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,11 @@
 		170BADF51A5B3BBE00729A03 /* ListaTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaTarefaViewController.swift; sourceTree = "<group>"; };
 		170BADF71A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinhaCelulaTableViewCell.swift; sourceTree = "<group>"; };
 		170BADFB1A5B499900729A03 /* Tarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
+		170BADFD1A5DCE8600729A03 /* AdicionarTarefaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdicionarTarefaViewController.swift; sourceTree = "<group>"; };
+		170BAE001A5DD43100729A03 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		170BAE021A5DD44800729A03 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		17CA0AF21A5DD4E800B4A67D /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		17CA0AF41A5DFB6E00B4A67D /* Categoria.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CA0AF31A5DD4E800B4A67D /* libc++.dylib in Frameworks */,
+				170BAE011A5DD43100729A03 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +75,7 @@
 		170BADC71A5B3AB900729A03 = {
 			isa = PBXGroup;
 			children = (
+				17CA0AF21A5DD4E800B4A67D /* libc++.dylib */,
 				170BADD21A5B3AB900729A03 /* ControleTarefaManual */,
 				170BADE81A5B3AB900729A03 /* ControleTarefaManualTests */,
 				170BADD11A5B3AB900729A03 /* Products */,
@@ -81,6 +94,7 @@
 		170BADD21A5B3AB900729A03 /* ControleTarefaManual */ = {
 			isa = PBXGroup;
 			children = (
+				170BADFF1A5DD3FB00729A03 /* Libs Externas */,
 				170BADFA1A5B497E00729A03 /* Modelos */,
 				170BADF91A5B496C00729A03 /* ViewController */,
 				170BADD91A5B3AB900729A03 /* Main.storyboard */,
@@ -122,6 +136,7 @@
 			children = (
 				170BADF51A5B3BBE00729A03 /* ListaTarefaViewController.swift */,
 				170BADF71A5B3CB500729A03 /* LinhaCelulaTableViewCell.swift */,
+				170BADFD1A5DCE8600729A03 /* AdicionarTarefaViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -129,9 +144,19 @@
 		170BADFA1A5B497E00729A03 /* Modelos */ = {
 			isa = PBXGroup;
 			children = (
+				17CA0AF41A5DFB6E00B4A67D /* Categoria.swift */,
 				170BADFB1A5B499900729A03 /* Tarefa.swift */,
 			);
 			name = Modelos;
+			sourceTree = "<group>";
+		};
+		170BADFF1A5DD3FB00729A03 /* Libs Externas */ = {
+			isa = PBXGroup;
+			children = (
+				170BAE021A5DD44800729A03 /* RLMSupport.swift */,
+				170BAE001A5DD43100729A03 /* Realm.framework */,
+			);
+			name = "Libs Externas";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +259,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170BADFE1A5DCE8600729A03 /* AdicionarTarefaViewController.swift in Sources */,
+				170BAE031A5DD44800729A03 /* RLMSupport.swift in Sources */,
+				17CA0AF51A5DFB6E00B4A67D /* Categoria.swift in Sources */,
 				170BADD61A5B3AB900729A03 /* AppDelegate.swift in Sources */,
 				170BADF61A5B3BBE00729A03 /* ListaTarefaViewController.swift in Sources */,
 				170BADFC1A5B499900729A03 /* Tarefa.swift in Sources */,
@@ -362,6 +390,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ControleTarefaManual",
+				);
 				INFOPLIST_FILE = ControleTarefaManual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -372,6 +404,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ControleTarefaManual",
+				);
 				INFOPLIST_FILE = ControleTarefaManual/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -431,6 +467,7 @@
 				170BADF11A5B3AB900729A03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		170BADF21A5B3AB900729A03 /* Build configuration list for PBXNativeTarget "ControleTarefaManualTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +476,7 @@
 				170BADF41A5B3AB900729A03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -55,7 +55,6 @@
                                                 <constraint firstItem="dew-9G-zKH" firstAttribute="top" secondItem="N0R-MB-Ufj" secondAttribute="topMargin" constant="5" id="d5z-jv-w15"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.17646451029999999" green="0.24668459200000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="lblData" destination="UeO-hq-ses" id="q16-RC-mEq"/>
                                             <outlet property="lblDescricao" destination="HoD-o1-SBp" id="WNI-49-GU9"/>
@@ -85,15 +84,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Cf6-VQ-8Co" id="W3J-mP-bXc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WFh-lz-f1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-89" y="406"/>
         </scene>
-        <!--View Controller-->
+        <!--Adicionar Tarefa View Controller-->
         <scene sceneID="LxT-Mg-H2S">
             <objects>
-                <viewController id="rdk-op-D5Y" sceneMemberID="viewController">
+                <viewController id="rdk-op-D5Y" customClass="AdicionarTarefaViewController" customModule="ControleTarefaManual" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Lb-BK-6uc"/>
                         <viewControllerLayoutGuide type="bottom" id="oW3-WV-Fqo"/>
@@ -102,18 +104,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
-                                <rect key="frame" x="26" y="40" width="553" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
+                                <rect key="frame" x="26" y="84" width="553" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descricao Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVw-Ca-OzV">
-                                <rect key="frame" x="26" y="80" width="553" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descricao Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVw-Ca-OzV">
+                                <rect key="frame" x="26" y="124" width="553" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-hx-FwE">
-                                <rect key="frame" x="16" y="143" width="568" height="162"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-hx-FwE">
+                                <rect key="frame" x="16" y="187" width="568" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="442193276.792696">
                                     <!--2015-01-05 23:27:56 +0000-->
                                 </date>
@@ -132,7 +134,23 @@
                             <constraint firstItem="qVw-Ca-OzV" firstAttribute="top" secondItem="DGU-hl-K5T" secondAttribute="bottom" constant="10" id="sKL-en-RGa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xkt-eU-MKx"/>
+                    <navigationItem key="navigationItem" id="Xkt-eU-MKx">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="3Aq-ge-7hP">
+                            <connections>
+                                <action selector="btnCancelarClick:" destination="rdk-op-D5Y" id="OnT-0d-4ZL"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Confirmar" id="2Hf-Sd-e3g">
+                            <connections>
+                                <action selector="btnConfirmarClick:" destination="rdk-op-D5Y" id="YvW-QO-JhM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="dtTarefa" destination="U6b-hx-FwE" id="ZMb-uS-oGm"/>
+                        <outlet property="txtDescicao" destination="qVw-Ca-OzV" id="KNU-Mu-B5F"/>
+                        <outlet property="txtTitulo" destination="DGU-hl-K5T" id="pwC-7n-oHP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgC-sz-Vf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,21 +7,42 @@
 //
 
 import UIKit
+import Realm
+
+//var arrayTarefa:[Tarefa] = []
+
+
 
 class ListaTarefaViewController: UIViewController, UITableViewDataSource {
 
-    var arrayTarefa:[Tarefa] = []
+    var listaTarefa: RLMResults{
+        
+        get {
+            return Tarefa.allObjects().sortedResultsUsingProperty("data", ascending: false)
+        }
+    }
+    
+    var listaCategorias: RLMResults{
+        
+        get {
+            return Categoria.allObjects().sortedResultsUsingProperty("nome", ascending: false)
+        }
+    }
+    
+
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       let tarefa1 = Tarefa(titulo: "Titulo 01", descricao: "Desc 01", data: "05/01/2015")
-        arrayTarefa.append(tarefa1)
-        
-        let tarefa2 = Tarefa(titulo: "Titulo 02", descricao: "Desc 02", data: "15/01/2015")
-        arrayTarefa.append(tarefa2)
+        self.tableView.reloadData()
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,9 +52,13 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let celulaTabela = tableView.dequeueReusableCellWithIdentifier("celula") as LinhaCelulaTableViewCell
         
-        let tarefaLinha = arrayTarefa[indexPath.row]
+        let tarefaLinha = listaTarefa[UInt(indexPath.row)] as Tarefa
         
-        celulaTabela.lblData.text = tarefaLinha.data
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        
+        celulaTabela.lblData.text = dateFormatter.stringFromDate(tarefaLinha.data)
         celulaTabela.lblDescricao.text = tarefaLinha.descricao
         celulaTabela.lblTitulo.text = tarefaLinha.titulo
         
@@ -41,13 +66,28 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
         
         celulaTabela.lblData.sizeToFit()
         celulaTabela.lblTitulo.sizeToFit()
+        
+        celulaTabela.backgroundColor = self.getRandomColor()
+        
         return celulaTabela
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayTarefa.count
+        return Int(listaTarefa.count)
     }
     
+    
+    func getRandomColor() -> UIColor{
+        
+        let randomRed:CGFloat = CGFloat(drand48())
+        
+        let randomGreen:CGFloat = CGFloat(drand48())
+        
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.3)
+        
+    }
 
     
     /*
