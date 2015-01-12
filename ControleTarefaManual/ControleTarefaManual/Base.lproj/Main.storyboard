@@ -77,6 +77,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LISTA TAREFA" id="RT2-KK-xAu">
+                        <barButtonItem key="leftBarButtonItem" title="Editar" id="5cg-11-odL">
+                            <connections>
+                                <action selector="entrarModoEdicaoTabella:" destination="5jK-lP-Opt" id="Es5-YS-jyk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3OE-rk-bts">
                             <color key="tintColor" red="0.17646451028056354" green="0.24668459202591375" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -104,34 +109,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
-                                <rect key="frame" x="26" y="84" width="553" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descricao Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVw-Ca-OzV">
                                 <rect key="frame" x="26" y="124" width="553" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28E-VW-WU1">
+                                <rect key="frame" x="26" y="159" width="548" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="rdk-op-D5Y" id="U0H-fw-gb3"/>
+                                    <outlet property="delegate" destination="rdk-op-D5Y" id="cdK-ye-kUf"/>
+                                </connections>
+                            </pickerView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U6b-hx-FwE">
-                                <rect key="frame" x="16" y="187" width="568" height="162"/>
+                                <rect key="frame" x="26" y="326" width="548" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="442193276.792696">
                                     <!--2015-01-05 23:27:56 +0000-->
                                 </date>
                             </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
+                                <rect key="frame" x="26" y="84" width="553" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="28E-VW-WU1" firstAttribute="top" secondItem="qVw-Ca-OzV" secondAttribute="bottom" constant="5" id="0hJ-Ho-U7K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qVw-Ca-OzV" secondAttribute="trailing" constant="5" id="2ug-nR-goy"/>
-                            <constraint firstItem="U6b-hx-FwE" firstAttribute="top" secondItem="qVw-Ca-OzV" secondAttribute="bottom" constant="33" id="EfV-Sx-eCe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DGU-hl-K5T" secondAttribute="trailing" constant="5" id="GmV-5A-fgt"/>
-                            <constraint firstItem="U6b-hx-FwE" firstAttribute="trailing" secondItem="Dvz-32-pQC" secondAttribute="trailingMargin" id="LFh-cc-hPY"/>
+                            <constraint firstItem="28E-VW-WU1" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" constant="10" id="Jmb-sF-q2T"/>
+                            <constraint firstItem="U6b-hx-FwE" firstAttribute="top" secondItem="28E-VW-WU1" secondAttribute="bottom" constant="5" id="NEd-aM-pgE"/>
+                            <constraint firstItem="U6b-hx-FwE" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" constant="10" id="TV6-im-1dY"/>
                             <constraint firstItem="qVw-Ca-OzV" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" constant="10" id="W3d-fH-I8b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="28E-VW-WU1" secondAttribute="trailing" constant="10" id="cDP-2K-gn1"/>
                             <constraint firstItem="DGU-hl-K5T" firstAttribute="top" secondItem="0Lb-BK-6uc" secondAttribute="bottom" constant="20" id="mpH-Zs-3FH"/>
                             <constraint firstItem="DGU-hl-K5T" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" constant="10" id="rMG-EW-8yx"/>
-                            <constraint firstItem="U6b-hx-FwE" firstAttribute="leading" secondItem="Dvz-32-pQC" secondAttribute="leadingMargin" id="sHu-i2-Ztt"/>
                             <constraint firstItem="qVw-Ca-OzV" firstAttribute="top" secondItem="DGU-hl-K5T" secondAttribute="bottom" constant="10" id="sKL-en-RGa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U6b-hx-FwE" secondAttribute="trailing" constant="10" id="yL3-v7-QJg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xkt-eU-MKx">
@@ -147,6 +162,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ddlcategorias" destination="28E-VW-WU1" id="jnt-VA-Qlr"/>
                         <outlet property="dtTarefa" destination="U6b-hx-FwE" id="ZMb-uS-oGm"/>
                         <outlet property="txtDescicao" destination="qVw-Ca-OzV" id="KNU-Mu-B5F"/>
                         <outlet property="txtTitulo" destination="DGU-hl-K5T" id="pwC-7n-oHP"/>
@@ -154,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZgC-sz-Vf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1555" y="406"/>
+            <point key="canvasLocation" x="1555" y="410"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Boq-XM-vYa">

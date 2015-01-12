@@ -9,15 +9,23 @@
 import UIKit
 import Realm
 
-class AdicionarTarefaViewController: UIViewController {
+class AdicionarTarefaViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    var listaCategorias: RLMResults{
+        
+        get {
+            return Categoria.allObjects().sortedResultsUsingProperty("nome", ascending: false)
+        }
+    }
+    
     @IBOutlet weak var txtTitulo: UITextField!
 
+    @IBOutlet weak var ddlcategorias: UIPickerView!
     @IBOutlet weak var dtTarefa: UIDatePicker!
     @IBOutlet weak var txtDescicao: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -37,12 +45,8 @@ class AdicionarTarefaViewController: UIViewController {
        let meuRelm = RLMRealm.defaultRealm()
         
         meuRelm.transactionWithBlock { () -> Void in
-            
-            let cat = Categoria()
-            cat.nome = "Importante"
-            
-            meuRelm.addOrUpdateObject(cat)
-            
+        
+            let cat = self.listaCategorias[UInt(self.ddlcategorias.selectedRowInComponent(0))] as Categoria
             let tarefa = Tarefa()
             tarefa.titulo = self.txtTitulo.text
             tarefa.descricao = self.txtDescicao.text
@@ -52,6 +56,18 @@ class AdicionarTarefaViewController: UIViewController {
         }
         
         self.dismissViewControllerAnimated(true, completion: { () -> Void in })
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return Int(listaCategorias.count)
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
+        return (self.listaCategorias[UInt(row)] as Categoria).nome
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
     }
 
     /*

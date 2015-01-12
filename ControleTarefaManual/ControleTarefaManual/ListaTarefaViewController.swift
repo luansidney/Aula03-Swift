@@ -9,8 +9,6 @@
 import UIKit
 import Realm
 
-//var arrayTarefa:[Tarefa] = []
-
 
 
 class ListaTarefaViewController: UIViewController, UITableViewDataSource {
@@ -18,14 +16,14 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
     var listaTarefa: RLMResults{
         
         get {
-            return Tarefa.allObjects().sortedResultsUsingProperty("data", ascending: false)
+            return Tarefa.allObjects()//.sortedResultsUsingProperty("data", ascending: false)
         }
     }
     
     var listaCategorias: RLMResults{
         
         get {
-            return Categoria.allObjects().sortedResultsUsingProperty("nome", ascending: false)
+            return Categoria.allObjects()//.sortedResultsUsingProperty("nome", ascending: false)
         }
     }
     
@@ -35,12 +33,26 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.reloadData()
+       
+        let meuRelm = RLMRealm.defaultRealm()
+        
+        meuRelm.transactionWithBlock { () -> Void in
+            let cat = Categoria()
+            cat.nome = "Trabalho"
+            
+            meuRelm.addOrUpdateObject(cat)
+            
+            let cat2 = Categoria()
+            cat2.nome = "Casa"
+            meuRelm.addOrUpdateObject(cat2)
+        }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        self.tableView.reloadData()
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,11 +75,11 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
         celulaTabela.lblTitulo.text = tarefaLinha.titulo
         
         celulaTabela.lblDescricao.sizeToFit()
-        
         celulaTabela.lblData.sizeToFit()
         celulaTabela.lblTitulo.sizeToFit()
         
         celulaTabela.backgroundColor = self.getRandomColor()
+        celulaTabela.showsReorderControl = true
         
         return celulaTabela
     }
@@ -76,6 +88,9 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
         return Int(listaTarefa.count)
     }
     
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+    }
     
     func getRandomColor() -> UIColor{
         
@@ -88,7 +103,28 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
         return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 0.3)
         
     }
-
+    
+    @IBAction func entrarModoEdicaoTabella(sender: AnyObject) {
+        self.tableView.editing = !self.tableView.editing
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.row == 0{
+            return false
+        }
+        else{
+        return true
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let realm = RLMRealm.defaultRealm()
+        realm.transactionWithBlock { () -> Void in
+            let tar = self.listaTarefa[UInt(indexPath.row)] as Tarefa
+            realm.deleteObject(tar)
+        }
+        self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    }
     
     /*
     // MARK: - Navigation
