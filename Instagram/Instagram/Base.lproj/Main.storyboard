@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jgC-wy-28m">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Epg-yR-sNz">
+            <objects>
+                <navigationController id="jgC-wy-28m" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IAp-ee-eUy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="CzJ-zw-6Rz" kind="relationship" relationship="rootViewController" id="0b1-A5-xQX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Br4-5D-KSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-416" y="405"/>
+        </scene>
+        <!--Instagram-->
+        <scene sceneID="Qsz-9z-i9D">
+            <objects>
+                <viewController id="CzJ-zw-6Rz" customClass="ViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Wf-Oc-mRu"/>
+                        <viewControllerLayoutGuide type="bottom" id="F3T-rr-f0z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bh9-Vh-h0P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDv-s1-mq0">
+                                <rect key="frame" x="20" y="101" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="dVD-Be-t6I"/>
+                                    <constraint firstAttribute="width" constant="300" id="kWm-ZG-LoO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qDv-s1-mq0" firstAttribute="leading" secondItem="Bh9-Vh-h0P" secondAttribute="leading" constant="20" id="B3e-0y-i04"/>
+                            <constraint firstItem="qDv-s1-mq0" firstAttribute="top" secondItem="9Wf-Oc-mRu" secondAttribute="bottom" constant="37" id="zta-jN-gRn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instagram" id="n8q-9O-REw">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="hyo-Si-YW2">
+                            <connections>
+                                <action selector="chamarCamera:" destination="CzJ-zw-6Rz" id="D4a-IG-I3c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imagemSelecionada" destination="qDv-s1-mq0" id="xrm-4C-xjt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gp5-Zi-6eN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="505" y="328"/>
+        </scene>
+    </scenes>
+</document>

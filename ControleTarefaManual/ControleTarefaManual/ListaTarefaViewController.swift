@@ -16,7 +16,7 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
     var listaTarefa: RLMResults{
         
         get {
-            return Tarefa.allObjects()//.sortedResultsUsingProperty("data", ascending: false)
+            return Tarefa.allObjects().sortedResultsUsingProperty("posicao", ascending: true)
         }
     }
     
@@ -90,6 +90,48 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
     
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         
+        
+        //Subindo
+        if sourceIndexPath.row > destinationIndexPath.row{
+            
+            let meuRelm = RLMRealm.defaultRealm()
+            
+            for var i: Int = destinationIndexPath.row; i < Int(listaTarefa.count) ; i = i + 1{
+
+                meuRelm.transactionWithBlock { () -> Void in
+                    
+                    var tarefaAtual: Tarefa!
+                    
+                    if i == destinationIndexPath.row{
+                        tarefaAtual = self.listaTarefa[UInt(sourceIndexPath.row)] as Tarefa
+                    }
+                    else{
+                        if i == sourceIndexPath.row{
+                            tarefaAtual = self.listaTarefa[UInt(i) - 1] as Tarefa
+                        }
+                        else{
+                            tarefaAtual = self.listaTarefa[UInt(i)] as Tarefa
+                        }
+                    }
+                    
+                    
+                    
+                    if tarefaAtual != nil{
+                        tarefaAtual.posicao = i
+                        meuRelm.addOrUpdateObject(tarefaAtual)
+                    }
+                }
+                
+                
+                
+                
+         
+                
+                }
+            
+        }
+        
+        
     }
     
     func getRandomColor() -> UIColor{
@@ -125,6 +167,9 @@ class ListaTarefaViewController: UIViewController, UITableViewDataSource {
         }
         self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
+    
+
+    
     
     /*
     // MARK: - Navigation

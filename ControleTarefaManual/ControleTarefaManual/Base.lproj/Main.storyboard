@@ -113,6 +113,9 @@
                                 <rect key="frame" x="26" y="124" width="553" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rdk-op-D5Y" id="5bc-dj-hMK"/>
+                                </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28E-VW-WU1">
                                 <rect key="frame" x="26" y="159" width="548" height="162"/>
@@ -127,10 +130,13 @@
                                     <!--2015-01-05 23:27:56 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
-                                <rect key="frame" x="26" y="84" width="553" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo Tarefa" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DGU-hl-K5T">
+                                <rect key="frame" x="26" y="86" width="553" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="rdk-op-D5Y" id="q11-wS-KaH"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

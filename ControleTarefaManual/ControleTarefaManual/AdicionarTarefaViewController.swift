@@ -9,7 +9,7 @@
 import UIKit
 import Realm
 
-class AdicionarTarefaViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class AdicionarTarefaViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     var listaCategorias: RLMResults{
         
@@ -52,6 +52,7 @@ class AdicionarTarefaViewController: UIViewController, UIPickerViewDataSource, U
             tarefa.descricao = self.txtDescicao.text
             tarefa.data = self.dtTarefa.date
             tarefa.categoria = cat
+            tarefa.posicao = Int(Tarefa.allObjects().count)
             meuRelm.addObject(tarefa)
         }
         
@@ -70,6 +71,18 @@ class AdicionarTarefaViewController: UIViewController, UIPickerViewDataSource, U
         return 1
     }
 
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.txtDescicao.resignFirstResponder()
+        self.txtTitulo.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.txtDescicao.resignFirstResponder()
+        self.txtTitulo.resignFirstResponder()
+        return true
+    }
+    
+    
     /*
     // MARK: - Navigation
 
