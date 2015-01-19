@@ -26,6 +26,10 @@
 		17CA0B391A6714B700B4A67D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B381A6714B700B4A67D /* SystemConfiguration.framework */; };
 		17CA0B3B1A6714C600B4A67D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B3A1A6714C600B4A67D /* libz.dylib */; };
 		17CA0B3D1A6714D600B4A67D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B3C1A6714D600B4A67D /* libsqlite3.dylib */; };
+		17CA0B431A6DA33E00B4A67D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B421A6DA33E00B4A67D /* ParseUI.framework */; };
+		17CA0B451A6DA43F00B4A67D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B441A6DA43F00B4A67D /* Social.framework */; };
+		17CA0B471A6DA44C00B4A67D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B461A6DA44C00B4A67D /* Accounts.framework */; };
+		17CA0B491A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,10 @@
 		17CA0B3A1A6714C600B4A67D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		17CA0B3C1A6714D600B4A67D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		17CA0B3F1A67163F00B4A67D /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Bridging-Header.h"; sourceTree = "<group>"; };
+		17CA0B421A6DA33E00B4A67D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		17CA0B441A6DA43F00B4A67D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		17CA0B461A6DA44C00B4A67D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaUsuarioTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +78,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CA0B471A6DA44C00B4A67D /* Accounts.framework in Frameworks */,
+				17CA0B451A6DA43F00B4A67D /* Social.framework in Frameworks */,
 				17CA0B3D1A6714D600B4A67D /* libsqlite3.dylib in Frameworks */,
 				17CA0B3B1A6714C600B4A67D /* libz.dylib in Frameworks */,
+				17CA0B431A6DA33E00B4A67D /* ParseUI.framework in Frameworks */,
 				17CA0B391A6714B700B4A67D /* SystemConfiguration.framework in Frameworks */,
 				17CA0B371A6714A800B4A67D /* StoreKit.framework in Frameworks */,
 				17CA0B311A67146D00B4A67D /* QuartzCore.framework in Frameworks */,
@@ -120,6 +131,7 @@
 				17CA0B041A67138400B4A67D /* AppDelegate.swift */,
 				17CA0B061A67138400B4A67D /* ViewController.swift */,
 				17CA0B081A67138400B4A67D /* Main.storyboard */,
+				17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */,
 				17CA0B0B1A67138400B4A67D /* Images.xcassets */,
 				17CA0B0D1A67138400B4A67D /* LaunchScreen.xib */,
 				17CA0B021A67138400B4A67D /* Supporting Files */,
@@ -157,6 +169,9 @@
 		17CA0B3E1A67150D00B4A67D /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				17CA0B461A6DA44C00B4A67D /* Accounts.framework */,
+				17CA0B441A6DA43F00B4A67D /* Social.framework */,
+				17CA0B421A6DA33E00B4A67D /* ParseUI.framework */,
 				17CA0B3C1A6714D600B4A67D /* libsqlite3.dylib */,
 				17CA0B251A6713DE00B4A67D /* Parse.framework */,
 				17CA0B241A6713DE00B4A67D /* Bolts.framework */,
@@ -276,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CA0B071A67138400B4A67D /* ViewController.swift in Sources */,
+				17CA0B491A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift in Sources */,
 				17CA0B051A67138400B4A67D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +421,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Instagram",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Instagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -422,6 +439,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Instagram",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Instagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
