@@ -30,6 +30,8 @@
 		17CA0B451A6DA43F00B4A67D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B441A6DA43F00B4A67D /* Social.framework */; };
 		17CA0B471A6DA44C00B4A67D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B461A6DA44C00B4A67D /* Accounts.framework */; };
 		17CA0B491A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */; };
+		17CA0B4D1A76EEA600B4A67D /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B4C1A76EEA600B4A67D /* PostsTableViewController.swift */; };
+		17CA0B4F1A76F77F00B4A67D /* CelulaPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B4E1A76F77F00B4A67D /* CelulaPostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		17CA0B441A6DA43F00B4A67D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		17CA0B461A6DA44C00B4A67D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaUsuarioTableViewController.swift; sourceTree = "<group>"; };
+		17CA0B4C1A76EEA600B4A67D /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
+		17CA0B4E1A76F77F00B4A67D /* CelulaPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaPostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 			children = (
 				17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */,
 				17CA0B061A67138400B4A67D /* ViewController.swift */,
+				17CA0B4C1A76EEA600B4A67D /* PostsTableViewController.swift */,
+				17CA0B4E1A76F77F00B4A67D /* CelulaPostTableViewCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -299,6 +305,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CA0B071A67138400B4A67D /* ViewController.swift in Sources */,
+				17CA0B4F1A76F77F00B4A67D /* CelulaPostTableViewCell.swift in Sources */,
+				17CA0B4D1A76EEA600B4A67D /* PostsTableViewController.swift in Sources */,
 				17CA0B491A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift in Sources */,
 				17CA0B051A67138400B4A67D /* AppDelegate.swift in Sources */,
 			);

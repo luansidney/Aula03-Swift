@@ -8,15 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
-
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate, UITextFieldDelegate  {
+    
     @IBOutlet weak var imagemSelecionada: UIImageView!
+    @IBOutlet weak var descricao: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gerenciarUsuarioLogado()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -26,7 +27,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.imagemSelecionada.image = image
         picker.dismissViewControllerAnimated(true, completion: { () -> Void in })
     }
-
+    
+    
     @IBAction func chamarCamera(sender: UIBarButtonItem) {
         
         let imgPick = UIImagePickerController()
@@ -39,6 +41,45 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+    @IBAction func realizarUpload(sender: UIButton) {
+        
+        //Ignorar todas as acoes do usuario
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        
+        //barra de progresso
+        let indicadorAtividade = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
+        indicadorAtividade.center = self.view.center
+        
+        self.view.addSubview(indicadorAtividade)
+        indicadorAtividade.startAnimating()
+        indicadorAtividade.hidesWhenStopped = true
+        
+        indicadorAtividade.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.WhiteLarge
+        
+        let imagemData = UIImagePNGRepresentation(imagemSelecionada.image)
+        let imgUpload = PFFile(name: "imagem.png", data: imagemData)
+        
+        let novoPost = PFObject(className: "Post")
+        
+        novoPost["usuarioOrigem"] = PFUser.currentUser()
+        novoPost["imagem"] = imgUpload
+        novoPost["descricao"] = self.descricao.text
+        
+        novoPost.saveInBackgroundWithBlock { (sucesso, error) -> Void in
+            if(sucesso){
+                self.imagemSelecionada.image = UIImage(named: "placeholder")
+                self.descricao.text = ""
+                self.ExibirAlerta("Sucesso", mensagemExibir: "Imagem enviada")
+                
+                indicadorAtividade.stopAnimating()
+                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            }
+            else{
+                println(error)
+            }
+        }
+        
+    }
     func signUpViewController(signUpController: PFSignUpViewController!, didSignUpUser user: PFUser!){
         signUpController.dismissViewControllerAnimated(true, completion: { () -> Void in })
     }
@@ -53,7 +94,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 if campo.length == 0{
                     ExibirAlerta("Error", mensagemExibir: "Preencha todos os campos")
                     return false
-                }                
+                }
             }
         }
         
@@ -88,7 +129,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let loginViewControler = PFLogInViewController()
             loginViewControler.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.SignUpButton
                 | PFLogInFields.LogInButton | PFLogInFields.PasswordForgotten
-                //| PFLogInFields.Twitter | PFLogInFields.Facebook
+            //| PFLogInFields.Twitter | PFLogInFields.Facebook
             
             
             let cadastrarNovoViewControler = PFSignUpViewController()
@@ -99,6 +140,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             loginViewControler.delegate = self
             self.presentViewController(loginViewControler, animated: true) { () -> Void in }
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.descricao.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.descricao.resignFirstResponder()
     }
     
 }
