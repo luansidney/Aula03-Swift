@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		17CA0B051A67138400B4A67D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B041A67138400B4A67D /* AppDelegate.swift */; };
 		17CA0B071A67138400B4A67D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B061A67138400B4A67D /* ViewController.swift */; };
-		17CA0B0A1A67138400B4A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CA0B081A67138400B4A67D /* Main.storyboard */; };
 		17CA0B0C1A67138400B4A67D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CA0B0B1A67138400B4A67D /* Images.xcassets */; };
 		17CA0B0F1A67138400B4A67D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CA0B0D1A67138400B4A67D /* LaunchScreen.xib */; };
 		17CA0B1B1A67138400B4A67D /* InstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B1A1A67138400B4A67D /* InstagramTests.swift */; };
@@ -32,6 +31,10 @@
 		17CA0B491A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */; };
 		17CA0B4D1A76EEA600B4A67D /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B4C1A76EEA600B4A67D /* PostsTableViewController.swift */; };
 		17CA0B4F1A76F77F00B4A67D /* CelulaPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B4E1A76F77F00B4A67D /* CelulaPostTableViewCell.swift */; };
+		17CA0B511A797F1100B4A67D /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B501A797F1100B4A67D /* MapaViewController.swift */; };
+		17CA0B531A79801F00B4A67D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B521A79801F00B4A67D /* MapKit.framework */; };
+		17CA0B561A7997FF00B4A67D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CA0B541A7997FF00B4A67D /* Main.storyboard */; };
+		17CA0B581A799F4600B4A67D /* AnotacaoMKPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B571A799F4600B4A67D /* AnotacaoMKPointAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +52,6 @@
 		17CA0B031A67138400B4A67D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17CA0B041A67138400B4A67D /* AppDelegate.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CA0B061A67138400B4A67D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		17CA0B091A67138400B4A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		17CA0B0B1A67138400B4A67D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		17CA0B0E1A67138400B4A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		17CA0B141A67138400B4A67D /* InstagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,10 @@
 		17CA0B481A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListaUsuarioTableViewController.swift; sourceTree = "<group>"; };
 		17CA0B4C1A76EEA600B4A67D /* PostsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		17CA0B4E1A76F77F00B4A67D /* CelulaPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CelulaPostTableViewCell.swift; sourceTree = "<group>"; };
+		17CA0B501A797F1100B4A67D /* MapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		17CA0B521A79801F00B4A67D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		17CA0B551A7997FF00B4A67D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		17CA0B571A799F4600B4A67D /* AnotacaoMKPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotacaoMKPointAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CA0B531A79801F00B4A67D /* MapKit.framework in Frameworks */,
 				17CA0B471A6DA44C00B4A67D /* Accounts.framework in Frameworks */,
 				17CA0B451A6DA43F00B4A67D /* Social.framework in Frameworks */,
 				17CA0B3D1A6714D600B4A67D /* libsqlite3.dylib in Frameworks */,
@@ -118,6 +125,8 @@
 				17CA0B061A67138400B4A67D /* ViewController.swift */,
 				17CA0B4C1A76EEA600B4A67D /* PostsTableViewController.swift */,
 				17CA0B4E1A76F77F00B4A67D /* CelulaPostTableViewCell.swift */,
+				17CA0B501A797F1100B4A67D /* MapaViewController.swift */,
+				17CA0B571A799F4600B4A67D /* AnotacaoMKPointAnnotation.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -145,8 +154,8 @@
 			children = (
 				0FD004021A546E7A002A4B87 /* ViewController */,
 				17CA0B041A67138400B4A67D /* AppDelegate.swift */,
-				17CA0B081A67138400B4A67D /* Main.storyboard */,
 				17CA0B0B1A67138400B4A67D /* Images.xcassets */,
+				17CA0B541A7997FF00B4A67D /* Main.storyboard */,
 				17CA0B0D1A67138400B4A67D /* LaunchScreen.xib */,
 				17CA0B021A67138400B4A67D /* Supporting Files */,
 				17CA0B3F1A67163F00B4A67D /* Instagram-Bridging-Header.h */,
@@ -183,6 +192,7 @@
 		17CA0B3E1A67150D00B4A67D /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				17CA0B521A79801F00B4A67D /* MapKit.framework */,
 				17CA0B461A6DA44C00B4A67D /* Accounts.framework */,
 				17CA0B441A6DA43F00B4A67D /* Social.framework */,
 				17CA0B421A6DA33E00B4A67D /* ParseUI.framework */,
@@ -284,7 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17CA0B0A1A67138400B4A67D /* Main.storyboard in Resources */,
+				17CA0B561A7997FF00B4A67D /* Main.storyboard in Resources */,
 				17CA0B0F1A67138400B4A67D /* LaunchScreen.xib in Resources */,
 				17CA0B0C1A67138400B4A67D /* Images.xcassets in Resources */,
 			);
@@ -305,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				17CA0B071A67138400B4A67D /* ViewController.swift in Sources */,
+				17CA0B511A797F1100B4A67D /* MapaViewController.swift in Sources */,
 				17CA0B4F1A76F77F00B4A67D /* CelulaPostTableViewCell.swift in Sources */,
+				17CA0B581A799F4600B4A67D /* AnotacaoMKPointAnnotation.swift in Sources */,
 				17CA0B4D1A76EEA600B4A67D /* PostsTableViewController.swift in Sources */,
 				17CA0B491A6DBAC300B4A67D /* ListaUsuarioTableViewController.swift in Sources */,
 				17CA0B051A67138400B4A67D /* AppDelegate.swift in Sources */,
@@ -331,20 +343,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		17CA0B081A67138400B4A67D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				17CA0B091A67138400B4A67D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		17CA0B0D1A67138400B4A67D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				17CA0B0E1A67138400B4A67D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		17CA0B541A7997FF00B4A67D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17CA0B551A7997FF00B4A67D /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -10,6 +10,7 @@ import UIKit
 
 class CelulaPostTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var lblData: UILabel!
     @IBOutlet weak var imgPost: UIImageView!
     @IBOutlet weak var lblusuario: UILabel!

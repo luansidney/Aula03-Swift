@@ -13,6 +13,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imagemSelecionada: UIImageView!
     @IBOutlet weak var descricao: UITextField!
     
+    let gerenciadorLocalizacao = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         gerenciarUsuarioLogado()
@@ -64,6 +66,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         novoPost["usuarioOrigem"] = PFUser.currentUser()
         novoPost["imagem"] = imgUpload
         novoPost["descricao"] = self.descricao.text
+        
+        novoPost["localizacao"] = PFGeoPoint(location: gerenciadorLocalizacao.location)
         
         novoPost.saveInBackgroundWithBlock { (sucesso, error) -> Void in
             if(sucesso){
@@ -139,6 +143,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             loginViewControler.delegate = self
             self.presentViewController(loginViewControler, animated: true) { () -> Void in }
+        }
+        else{
+            gerenciadorLocalizacao.requestWhenInUseAuthorization()
+            gerenciadorLocalizacao.desiredAccuracy = kCLLocationAccuracyBest
+            gerenciadorLocalizacao.startUpdatingLocation()
         }
     }
     

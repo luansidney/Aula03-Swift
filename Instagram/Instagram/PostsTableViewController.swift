@@ -12,6 +12,8 @@ class PostsTableViewController: UITableViewController {
 
     var listaPosts = []
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,10 +21,6 @@ class PostsTableViewController: UITableViewController {
        
         self.atualizarLista()
         
-        /*query.findObjectsInBackgroundWithBlock { (posts:[AnyObject]!, erro: NSError!) -> Void in
-            self.listaPosts = NSArray(array: posts)
-            
-        }*/
     }
     
     func atualizarLista() {
@@ -30,8 +28,14 @@ class PostsTableViewController: UITableViewController {
         let query = PFQuery(className: "Post")
         query.includeKey("usuarioOrigem")
         query.includeKey("createdAt")
-        self.listaPosts = NSArray(array: query.findObjects())
-        println("OK")
+            
+       /*query.findObjectsInBackgroundWithBlock { (ret:[AnyObject]!, error) -> Void in
+            self.listaPosts = NSArray(array:ret.reverse())
+            
+        }*/
+        self.listaPosts = NSArray(array: query.findObjects().reverse())
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +58,9 @@ class PostsTableViewController: UITableViewController {
         let post = listaPosts[indexPath.row] as PFObject
         cell.lblusuario.text = (post["usuarioOrigem"] as PFUser).username
         cell.lblData.text = post["createdAt"] as? String
-        println(post["createdAt"])
+        cell.lblDescricao.text = post["descricao"] as? String
+        cell.lblDescricao.sizeToFit()
+        
         let imgSalva = post["imagem"] as PFFile
 
         imgSalva.getDataInBackgroundWithBlock { (imagemDown: NSData!, error) -> Void in
@@ -65,7 +71,13 @@ class PostsTableViewController: UITableViewController {
         return cell
     }
    
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "chamarMapa"{
+            let navDestino = segue.destinationViewController as UINavigationController
+            let mapViewController = navDestino.viewControllers[0] as MapaViewController
+            mapViewController.listaDeFotos = self.listaPosts
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
