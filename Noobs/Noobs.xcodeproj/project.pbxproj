@@ -15,6 +15,7 @@
 		17CA0B7E1A8019F400B4A67D /* NoobsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B7D1A8019F400B4A67D /* NoobsTests.swift */; };
 		17CA0B881A801F5B00B4A67D /* ListaJogosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B871A801F5A00B4A67D /* ListaJogosTableViewController.swift */; };
 		17CA0B8A1A80203600B4A67D /* AlamofireSwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CA0B891A80203600B4A67D /* AlamofireSwiftyJSON.swift */; };
+		17CA0B921A802FE400B4A67D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CA0B911A802FE400B4A67D /* Social.framework */; };
 		89DF8CA512D2F1D8239A716A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532CD5C7048932A7CB388958 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		17CA0B871A801F5A00B4A67D /* ListaJogosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListaJogosTableViewController.swift; path = ../ListaJogosTableViewController.swift; sourceTree = "<group>"; };
 		17CA0B891A80203600B4A67D /* AlamofireSwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSwiftyJSON.swift; sourceTree = "<group>"; };
 		17CA0B901A8024C400B4A67D /* Noobs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Noobs-Bridging-Header.h"; sourceTree = "<group>"; };
+		17CA0B911A802FE400B4A67D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		532CD5C7048932A7CB388958 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD363BF3F360163F0E75F60 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F06ABFFD02F47D78416185B0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CA0B921A802FE400B4A67D /* Social.framework in Frameworks */,
 				89DF8CA512D2F1D8239A716A /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,6 +142,7 @@
 		F504BA04F1D04770665F0E02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17CA0B911A802FE400B4A67D /* Social.framework */,
 				532CD5C7048932A7CB388958 /* Pods.framework */,
 			);
 			name = Frameworks;

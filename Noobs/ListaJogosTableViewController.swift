@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Social
 
 let kURLBase = "http://www.giantbomb.com/api/"
 let kAPIKey = "?api_key=39a4bc751807079f1373b6a89948064022e97b49&format=json"
@@ -63,6 +64,20 @@ class ListaJogosTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let umJogo = self.listaJogos[indexPath.row] as JSON
+        
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter){
+        
+          let twitter = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+          let texto = umJogo["name"].string!
+        
+           self.presentViewController(twitter, animated: true, completion: nil)
+        }else{
+            println("nada")
+        }
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
